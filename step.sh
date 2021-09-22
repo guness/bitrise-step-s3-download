@@ -108,8 +108,8 @@ validate_required_input "output_location" "${output_location}"
 eval expanded_local_path="${output_location}"
 
 if [ ! -e "${expanded_local_path}" ]; then
-  echo_fail "The specified local path doesn't exist at: ${expanded_local_path}"
-  exit 1
+  echo_warn "The specified local path doesn't exist at: ${expanded_local_path}, so creating."
+  mkdir -p "${expanded_local_path}"
 fi
 
 S3_PATH="s3://${s3_bucket}/${s3_filepath}"
