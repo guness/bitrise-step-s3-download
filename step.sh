@@ -130,7 +130,7 @@ else
   sudo ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 fi
 
-aws s3 cp --only-show-errors "${S3_PATH}" "${expanded_local_path}"
+aws s3 cp --only-show-errors "${S3_PATH}" "${expanded_local_path}" --recursive
 
 echo_info "File downloaded."
 
